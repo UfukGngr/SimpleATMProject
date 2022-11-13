@@ -24,20 +24,24 @@ public class Main {
                             "4-Çıkış Yap\n");
                     System.out.print("Lütfen yapmak istediğiniz işlemi seçin: ");
                     select=scan.nextInt();
-                    if(select==1){
-                        System.out.print("Çekmek istediğiniz tutarı giriniz: ");
-                        price=scan.nextInt();
-                        if (price>balance){
-                            System.out.println("Bakiye yetersiz.");
-                        }else {
-                            balance-=price;
-                        }
-                    }else if (select==2){
-                        System.out.print("Yatırmak istediğiniz tutarı giriniz: ");
-                        price=scan.nextInt();
-                        balance+=price;
-                    }else if (select==3){
-                        System.out.println("Bakiyeniz :"+balance);
+                    switch (select){
+                        case 1:
+                            System.out.print("Çekmek istediğiniz tutarı giriniz: ");
+                            price=scan.nextInt();
+                            if (price>balance){
+                                System.out.println("Bakiye yetersiz.");
+                            }else {
+                                balance-=price;
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Yatırmak istediğiniz tutarı giriniz: ");
+                            price=scan.nextInt();
+                            balance+=price;
+                            break;
+                        case 3:
+                            System.out.println("Bakiyeniz :"+balance);
+                            break;
                     }
                 }while (select!=4);
                 System.out.println("Tekrar görüşmek üzere...");
